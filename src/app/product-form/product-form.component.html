@@ -1,0 +1,48 @@
+<p>product-form works!</p>
+
+
+<div class="container mt-4">
+    <h2>{{ isEditMode ? 'Edit' : 'Add' }} Product</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="name" 
+          [(ngModel)]="product.name" 
+          name="name" 
+          required
+        >
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input 
+          type="number" 
+          class="form-control" 
+          id="price" 
+          [(ngModel)]="product.price" 
+          name="price" 
+          required
+        >
+      </div>
+      <div class="form-group">
+        <label for="type">Type</label>
+        <input 
+          type="number" 
+          class="form-control" 
+          id="type" 
+          [(ngModel)]="product.type" 
+          name="type" 
+          required
+        >
+      </div>
+      <button type="submit" class="btn btn-primary mr-2">
+        {{ isEditMode ? 'Update' : 'Create' }}
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="cancel()">
+        Cancel
+      </button>
+    </form>
+  </div>
+  
